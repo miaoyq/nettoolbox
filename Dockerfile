@@ -3,7 +3,8 @@ LABEL maintainer "miaoyq <miaoyq.2017@gmail.com>"
 COPY .bashrc /root/.bashrc
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && \
-    apk --no-cache --update --verbose add grep bash tcpdump iptables python curl  && \
+    apk --no-cache --update --verbose add grep bash tcpdump iptables python curl ca-certificates iproute2 net-tools && \
+    update-ca-certificates && \
     wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py && \
     chmod +x speedtest-cli && \
     mv ./speedtest-cli /bin/speedtest-cli && \
