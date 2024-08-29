@@ -10,4 +10,4 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     mv ./speedtest-cli /bin/speedtest-cli && \
     rm -rf /var/cache/apk/* /tmp/* /sbin/halt /sbin/poweroff /sbin/reboot
 
-ENTRYPOINT ["sleep infinity"]
+ENTRYPOINT ["sleep 100000000"]
